@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vårslippet 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
+
+    :root {
+      --green: #3a5a40;
+      --light-green: #a7c4a0;
+      --cream: #f9f3e3;
+      --gold: #c9a84c;
+      --brown: #5c3d1e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'Lato', sans-serif;
+      color: var(--brown);
+      min-height: 100vh;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      background: linear-gradient(180deg, #d4e8c2 0%, #f0e6c8 100%);
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .cow-row {
+      font-size: 2.4rem;
+      letter-spacing: 0.3rem;
+      margin-bottom: 10px;
+      animation: drift 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      from { transform: translateX(-8px); }
+      to   { transform: translateX(8px); }
+    }
+
+    .hero-label {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--brown);
+      opacity: 0.6;
+      margin-bottom: 20px;
+    }
+
+    .hero-tagline {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--brown);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ---- DIVIDER ---- */
+    .divider {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.4rem;
+      letter-spacing: 0.5rem;
+      padding: 30px 20px 10px;
+    }
+
+    /* ---- PROGRAM ---- */
+    .program {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+
+    .program-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 36px;
+    }
+
+    .event-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 20px;
+      margin-bottom: 34px;
+      align-items: start;
+    }
+
+    .event-time {
+      text-align: right;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--gold);
+      padding-top: 3px;
+      font-style: italic;
+    }
+
+    .event-body {
+      border-left: 2px solid var(--light-green);
+      padding-left: 18px;
+    }
+
+    .event-icon {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .event-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .event-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--brown);
+      opacity: 0.85;
+    }
+
+    .event-desc em {
+      font-style: italic;
+    }
+
+    /* ---- SPONSORS ---- */
+    .sponsors {
+      background: var(--green);
+      color: var(--cream);
+      text-align: center;
+      padding: 36px 24px;
+    }
+
+    .sponsors-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 14px;
+    }
+
+    .sponsors-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .sponsor-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .sponsor-sep {
+      color: var(--gold);
+      font-size: 1.4rem;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    .footer-prayer {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      max-width: 460px;
+      margin: 0 auto;
+      opacity: 0.88;
+    }
+
+    .footer-amen {
+      margin-top: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.45;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="cow-row">🐄🐄🐄🐄🐄</div>
+    <p class="hero-label">Balders gate 14 &nbsp;·&nbsp; 2. mai 2026</p>
+    <h1>Vår<em>slippet</em></h1>
+    <p class="hero-year">— Anno 2026 —</p>
+    <p class="hero-tagline">
+      Som kyrne på Bygdøy når beitene endelig åpner seg,
+      slippes herrene løs i vårens navn.
+      Varm snute. Bred smil. Full fart.
+    </p>
+  </section>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- PROGRAM -->
+  <section class="program">
+    <p class="program-title">Kveldsprogram</p>
+
+    <div class="event-item">
+      <div class="event-time">17:00</div>
+      <div class="event-body">
+        <div class="event-icon">🍺</div>
+        <div class="event-title">Oppmøte</div>
+        <div class="event-desc">
+          Velkomne fra kl. 17. Ta gjerne et par pils på
+          <em>Gabels Vinbar</em> og nyt den friske vårluft
+          før beitet for alvor åpner seg.
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-time">18:30</div>
+      <div class="event-body">
+        <div class="event-icon">🍽️</div>
+        <div class="event-title">Middag</div>
+        <div class="event-desc">
+          Presentert av <em>Olav</em> og <em>Martin</em>.
+          Middagen bærer preg av omsorg, håndverk og
+          en slags uforklarlig stolthet.
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-time">19:30</div>
+      <div class="event-body">
+        <div class="event-icon">🎲</div>
+        <div class="event-title">Drikkelek</div>
+        <div class="event-desc">
+          Arrangert av <em>J</em>. Regler opplyses på stedet.
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-time">21:00</div>
+      <div class="event-body">
+        <div class="event-icon">🥂</div>
+        <div class="event-title">Tale</div>
+        <div class="event-desc">
+          <em>Viktor</em> og <em>Big Ice</em> tar ordet.
+          Glasset løftes. Tårene trues. Historiene huskes.
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-time">~22:00</div>
+      <div class="event-body">
+        <div class="event-icon">📜</div>
+        <div class="event-title">Diktopplesning</div>
+        <div class="event-desc">
+          <em>Herman</em> fremfører poesi av ukjent opprinnelse
+          og tvilsom kvalitet — men det leveres med overbevisning.
+        </div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-time">23–00</div>
+      <div class="event-body">
+        <div class="event-icon">🌙</div>
+        <div class="event-title">Kyrne drives videre</div>
+        <div class="event-desc">
+          Beitet er tomt. Natten kaller.
+          Herrene spres til de fire vinder inntil neste vår.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <section class="sponsors">
+    <p class="sponsors-label">Kvelden er stolt presentert av</p>
+    <div class="sponsors-list">
+      <span class="sponsor-name">Wahl Eiendom</span>
+      <span class="sponsor-sep">✦</span>
+      <span class="sponsor-name">Fiskebilen til Big Ice</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+  </footer>
+
+</body>
+</html>
